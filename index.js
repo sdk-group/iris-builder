@@ -7,10 +7,14 @@ let isProduction = () => {
 	return (gutil.env.type == "production") || process.env['NODE_ENV'] == 'production';
 }
 
+let uglify;
+let minify;
+let del;
+
 if (isProduction()) {
-	let del = require("del");
-	let uglify = require("gulp-uglify");
-	let minify = require("gulp-minify");
+	del = require("del");
+	uglify = require("gulp-uglify");
+	minify = require("gulp-minify");
 }
 
 gulp.task("es6-js", function () {
