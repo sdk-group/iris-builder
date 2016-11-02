@@ -14,6 +14,7 @@ let del;
 if (isProduction()) {
 	del = require("del");
 	uglify = require("gulp-uglify");
+	console.log('Prod', uglify);
 	minify = require("gulp-minify");
 }
 
