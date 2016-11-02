@@ -11,10 +11,12 @@ let uglify;
 let minify;
 let del;
 
+let uglifyjs = require('uglify-js');
+let minifier = require('gulp-uglify/minifier');
+
 if (isProduction()) {
 	del = require("del");
 	uglify = require("gulp-uglify");
-	console.log('Prod', uglify);
 	minify = require("gulp-minify");
 }
 
@@ -33,7 +35,7 @@ gulp.task("es6-js", function () {
 			"babelrc": false,
 			"plugins": plg
 		}))
-		.pipe(production ? uglify() : gutil.noop())
+		.pipe(production ? minifier({}, uglifyjs) : gutil.noop())
 		.pipe(gulp.dest("build"))
 		.on('end', function () {
 			console.log('end build');

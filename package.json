@@ -18,6 +18,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-minify": "0.0.14",
     "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.7"
+    "gulp-util": "^3.0.7",
+    "uglify-js": "^2.7.4"
   }
 }
