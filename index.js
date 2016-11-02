@@ -4,7 +4,7 @@ let gulp = require("gulp");
 let babel = require("gulp-babel");
 let gutil = require("gulp-util");
 let isProduction = () => {
-	return (gutil.env.type == "production") || process.env['NODE_ENV'] == 'production';
+	return (gutil.env.type == "production") || process.env['NODE_ENV'] == '__production';
 }
 
 let uglify;
