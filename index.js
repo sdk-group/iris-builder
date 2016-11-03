@@ -24,7 +24,7 @@ gulp.task("es6-js", function () {
 	let production = isProduction();
 	console.log("PROD:", production);
 	let src = ["src/**/*.js"];
-	let plg = ["transform-strict-mode"];
+	let plg = ["transform-strict-mode", "transform-remove-console"];
 
 	if (!production) {
 		src.push("tests/**/*.js");
@@ -32,6 +32,7 @@ gulp.task("es6-js", function () {
 
 	return gulp.src(src)
 		.pipe(babel({
+			"comments": false,
 			"presets": ["es2015"],
 			"babelrc": false,
 			"plugins": plg
